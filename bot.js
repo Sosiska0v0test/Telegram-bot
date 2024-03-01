@@ -20,8 +20,7 @@ bot.on('message', async (ctx) => {
   if (ctx.message.location) {
     console.log(ctx.message.location);
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ctx.message.location.latitude}&lon=${ctx.message.location.longitude}&appid=b9eef3caee88df715064d809dc28e02a`;
-    const res = await axios.get(url)
-    console.log(res);
+    const res = await axios.get(url);
     const tempCelsius = res.data.main.temp - 273.15;
     let emoji = '';
     if (tempCelsius >= -20 && tempCelsius <= 0) {
